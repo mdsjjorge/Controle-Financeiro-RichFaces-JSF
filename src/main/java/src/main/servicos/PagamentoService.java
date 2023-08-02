@@ -23,6 +23,10 @@ public class PagamentoService {
     public void salvarPagamento(Pagamento novoPagamento) {
         pagamentoDAO.salvarPagamento(novoPagamento);
     }
+    
+    public Pagamento buscarPagamentoPorId(long idPagamento) {
+        return pagamentoDAO.buscarPagamentoPorId(idPagamento);
+    }
 
     public void atualizarPagamento(Pagamento pagamento) {
 //        if (!pagamentoDAO.verificarPagamentoUnico(pagamento.getNumeroPagamento(), pagamento.getAnoPagamento(), pagamento.getId())) {

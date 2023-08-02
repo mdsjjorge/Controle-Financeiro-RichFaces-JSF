@@ -1,20 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsf/html" prefix="h"%>
-<%@ taglib uri="http://java.sun.com/jsf/core" prefix="f"%>
-<%@ taglib uri="http://richfaces.org/rich" prefix="rich"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Visualizar Empenho</title>
+    <title>Detalhes do Empenho</title>
 </head>
 <body>
-    <f:view>
-        <h:form>
-            <h:outputText value="#{empenhoBean.empenho.numeroEmpenho}" />
-            <h:outputText value="#{empenhoBean.empenho.anoEmpenho}" />
-            <!-- Adicione mais campos de saída aqui para outros atributos -->
-        </h:form>
-    </f:view>
+    <h1>Detalhes do Empenho</h1>
+    <p><strong>Ano do Empenho:</strong> ${empenho.anoEmpenho}</p>
+    <p><strong>Número do Empenho:</strong> ${empenho.numeroEmpenho}</p>
+    <p><strong>Data do Empenho:</strong> ${empenho.dataEmpenho}</p>
+    <p><strong>Valor do Empenho:</strong> ${empenho.valorEmpenho}</p>
+    <p><strong>Observação:</strong> ${empenho.observacao}</p>
+    <br />
+    <a href="listEmpenhos.jsp">Voltar para a lista de Empenhos</a>
 </body>
 </html>

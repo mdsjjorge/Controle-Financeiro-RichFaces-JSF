@@ -1,21 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsf/html" prefix="h"%>
-<%@ taglib uri="http://java.sun.com/jsf/core" prefix="f"%>
-<%@ taglib uri="http://richfaces.org/rich" prefix="rich"%>
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Excluir Pagamento</title>
 </head>
 <body>
-    <f:view>
-        <h:form>
-            <h:outputText value="#{pagamentoBean.pagamento.numeroPagamento}" />
-            <h:outputText value="#{pagamentoBean.pagamento.anoPagamento}" />
-            <!-- Adicione mais campos de saída aqui para outros atributos -->
-            <h:commandButton value="Excluir" action="#{pagamentoBean.deletarPagamento}" />
-        </h:form>
-    </f:view>
+    <h1>Excluir Pagamento</h1>
+    <p>Você está prestes a excluir o pagamento com ID ${idPagamento}. Tem certeza?</p>
+    <form action="deletePagamentoAction.jsp" method="post">
+        <input type="hidden" name="idPagamento" value="${idPagamento}" />
+        <input type="submit" value="Excluir" />
+    </form>
+    <br />
+    <a href="listarPagamentos.jsp">Voltar para a lista de Pagamentos</a>
 </body>
 </html>

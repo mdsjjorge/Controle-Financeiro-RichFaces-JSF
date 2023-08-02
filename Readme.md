@@ -1,3 +1,40 @@
+# Projeto de Controle Financeiro
+
+Este é um projeto de controle financeiro desenvolvido em Java utilizando a plataforma JavaServer Faces (JSF) e o framework RichFaces. O projeto permite cadastrar e gerenciar despesas, empenhos e pagamentos, além de realizar consultas baseadas em filtros.
+
+## Pré-requisitos
+
+- JDK (Java Development Kit) 8 ou superior instalado em sua máquina.
+- Apache Maven instalado em sua máquina.
+- Servidor de Aplicação compatível com Java EE (ex: Apache Tomcat, WildFly, GlassFish).
+
+## Como Executar
+
+1. Clone este repositório para a sua máquina local:
+
+```bash
+git clone https://github.com/mdsjjorge/Controle-Financeiro-RichFaces-JSF.git
+```
+
+Navegue para o diretório raiz do projeto:
+
+```bash
+cd Controle-Financeiro-RichFaces-JSF
+```
+Compile o projeto utilizando o Maven:
+
+```bash
+mvn clean install
+```
+Implante o arquivo WAR gerado no passo anterior em um servidor de aplicação compatível.
+
+Acesse a aplicação no navegador através da URL:
+
+```bash
+http://localhost:8080/Controle-Financeiro-RichFaces-JSF/
+```
+Funcionalidades <br>
+Consulta de Despesas, Empenhos e Pagamentos utilizando filtros específicos.
 
 
 ** Códigos SQL para criação do banco no PostgreSQL **

@@ -40,6 +40,10 @@ public class DespesaService {
 
         despesaDAO.atualizarDespesa(despesa);
     }
+    
+    public Despesa buscarDespesaPorId(long idDespesa) {
+        return despesaDAO.buscarDespesaPorId(idDespesa);
+    }
 
     public void deletarDespesa(long idDespesa) {
         Despesa despesa = despesaDAO.buscarDespesaPorId(idDespesa);
