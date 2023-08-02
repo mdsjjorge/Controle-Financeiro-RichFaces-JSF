@@ -5,6 +5,11 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.TypedQuery;
 
 import src.main.entidades.Pagamento;
 import src.main.util.PostgreSQLConnectionUtil;
@@ -31,6 +36,25 @@ public class PagamentoDAO {
 
         return true; 
     }
+	
+	private EntityManagerFactory entityManagerFactory;
+	
+	public List<Pagamento> buscarTodosPagamentos() {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        String jpql = "SELECT p FROM Pagamento p";
+        TypedQuery<Pagamento> query = entityManager.createQuery(jpql, Pagamento.class);
+        List<Pagamento> pagamentos = query.getResultList();
+        entityManager.close();
+        return pagamentos;
+    }
+
+//    public void salvarPagamento(Pagamento pagamento) {
+//        EntityManager entityManager = entityManagerFactory.createEntityManager();
+//        entityManager.getTransaction().begin();
+//        entityManager.persist(pagamento);
+//        entityManager.getTransaction().commit();
+//        entityManager.close();
+//    }
 	
 	public void salvarPagamento(Pagamento pagamento) {
         String sql = "INSERT INTO pagamento (id_empenho, numero_pagamento, ano_pagamento, data_pagamento, valor_pagamento, observacao) " +

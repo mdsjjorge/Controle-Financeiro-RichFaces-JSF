@@ -1,5 +1,7 @@
 package src.main.servicos;
 
+import java.util.List;
+
 import src.main.DAO.DespesaDAO;
 import src.main.entidades.Despesa;
 
@@ -19,6 +21,14 @@ public class DespesaService {
         } else {
             throw new RuntimeException("Número de protocolo já existe. Por favor, escolha outro número.");
         }
+    }
+    
+    public List<Despesa> buscarTodasDespesas() {
+        return despesaDAO.buscarTodasDespesas();
+    }
+    
+    public void salvarDespesa(Despesa novaDespesa) {
+        despesaDAO.salvarDespesa(novaDespesa);
     }
 
     public void atualizarDespesa(Despesa despesa) {

@@ -1,5 +1,7 @@
 package src.main.servicos;
 
+import java.util.List;
+
 import src.main.DAO.PagamentoDAO;
 import src.main.entidades.Pagamento;
 
@@ -17,6 +19,10 @@ public class PagamentoService {
             throw new RuntimeException("O pagamento com o mesmo número e ano já foi registrado.");
         }
     }
+    
+    public void salvarPagamento(Pagamento novoPagamento) {
+        pagamentoDAO.salvarPagamento(novoPagamento);
+    }
 
     public void atualizarPagamento(Pagamento pagamento) {
 //        if (!pagamentoDAO.verificarPagamentoUnico(pagamento.getNumeroPagamento(), pagamento.getAnoPagamento(), pagamento.getId())) {
@@ -24,6 +30,10 @@ public class PagamentoService {
 //        }
 
         pagamentoDAO.atualizarPagamento(pagamento);
+    }
+    
+    public List<Pagamento> buscarTodosPagamentos() {
+        return pagamentoDAO.buscarTodosPagamentos();
     }
 
     public void deletarPagamento(long idPagamento) {

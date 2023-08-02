@@ -1,5 +1,7 @@
 package src.main.servicos;
 
+import java.util.List;
+
 import src.main.DAO.EmpenhoDAO;
 import src.main.entidades.Empenho;
 
@@ -18,6 +20,14 @@ public class EmpenhoService {
         } else {
             throw new RuntimeException("O empenho com o mesmo número e ano já foi registrado.");
         }
+    }
+    
+    public void salvarEmpenho(Empenho novoEmpenho) {
+        empenhoDAO.salvarEmpenho(novoEmpenho);
+    }
+    
+    public List<Empenho> buscarTodosEmpenhos() {
+        return empenhoDAO.buscarTodosEmpenhos();
     }
 
     public void atualizarEmpenho(Empenho empenho) {

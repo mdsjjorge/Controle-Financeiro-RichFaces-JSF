@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import javax.persistence.TypedQuery;
+import javax.persistence.EntityManager;
 
 import src.main.entidades.Despesa;
 import src.main.util.PostgreSQLConnectionUtil;
@@ -31,6 +33,14 @@ public class DespesaDAO {
         }
 
         return true; 
+    }
+	
+	private EntityManager entityManager;
+	
+    public List<Despesa> buscarTodasDespesas() {
+        String jpql = "SELECT d FROM Despesa d";
+        TypedQuery<Despesa> query = entityManager.createQuery(jpql, Despesa.class);
+        return query.getResultList();
     }
 	
 	public boolean verificarNumeroProtocoloUnico(String numeroProtocolo, long idDespesa) {

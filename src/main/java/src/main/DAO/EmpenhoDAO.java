@@ -7,6 +7,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.TypedQuery;
+
 import src.main.entidades.Empenho;
 import src.main.util.PostgreSQLConnectionUtil;
 
@@ -33,6 +37,25 @@ public class EmpenhoDAO {
 
         return true; 
     }
+	
+	private EntityManagerFactory entityManagerFactory;
+	
+    public List<Empenho> buscarTodosEmpenhos() {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        String jpql = "SELECT e FROM Empenho e";
+        TypedQuery<Empenho> query = entityManager.createQuery(jpql, Empenho.class);
+        List<Empenho> empenhos = query.getResultList();
+        entityManager.close();
+        return empenhos;
+    }
+
+//    public void salvarEmpenho(Empenho empenho) {
+//        EntityManager entityManager = entityManagerFactory.createEntityManager();
+//        entityManager.getTransaction().begin();
+//        entityManager.persist(empenho);
+//        entityManager.getTransaction().commit();
+//        entityManager.close();
+//    }
     
 	public boolean verificarEmpenhoSemPagamentos(Empenho empenho) {
         String sql = "SELECT COUNT(*) FROM pagamento WHERE id_empenho = ?";

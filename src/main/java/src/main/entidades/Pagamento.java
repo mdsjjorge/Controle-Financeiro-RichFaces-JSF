@@ -30,6 +30,10 @@ public class Pagamento {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Pagamento() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public long getIdEmpenho() {
 		return idEmpenho;
 	}

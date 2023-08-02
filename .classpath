@@ -52,5 +52,7 @@
 	<classpathentry kind="lib" path="C:/Users/mdsjj/Documents/Doc-FS/Doc-FS-GITHUB/Doc-FS-Eclipse-Workspace/Vonixx/Controle Financeiro RichFaces/src/main/webapp/META-INF/lib/richfaces-a4j-4.5.17.Final.jar"/>
 	<classpathentry kind="lib" path="C:/Users/mdsjj/Documents/Doc-FS/Doc-FS-GITHUB/Doc-FS-Eclipse-Workspace/Vonixx/Controle Financeiro RichFaces/src/main/webapp/META-INF/lib/richfaces-core-4.5.17.Final.jar"/>
 	<classpathentry kind="lib" path="C:/Users/mdsjj/Documents/Doc-FS/Doc-FS-GITHUB/Doc-FS-Eclipse-Workspace/Vonixx/Controle Financeiro RichFaces/src/main/webapp/META-INF/lib/sac-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mdsjj/Documents/Doc-FS/Doc-FS-GITHUB/Doc-FS-Eclipse-Workspace/Vonixx/Controle Financeiro RichFaces/src/main/webapp/META-INF/lib/jsf-api-2.1.29-11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mdsjj/Documents/Doc-FS/Doc-FS-GITHUB/Doc-FS-Eclipse-Workspace/Vonixx/Controle Financeiro RichFaces/src/main/webapp/META-INF/lib/hibernate-jpa-2.1-api-1.0.2.Final.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
