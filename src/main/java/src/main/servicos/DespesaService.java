@@ -22,9 +22,9 @@ public class DespesaService {
     }
 
     public void atualizarDespesa(Despesa despesa) {
-        if (!despesaDAO.verificarNumeroProtocoloUnico(despesa.getNumeroProtocolo(), despesa.getId())) {
-            throw new RuntimeException("Número de protocolo já existe. Por favor, escolha outro número.");
-        }
+//        if (!despesaDAO.verificarNumeroProtocoloUnico(despesa.getNumeroProtocolo(), despesa.getId())) {
+//            throw new RuntimeException("Número de protocolo já existe. Por favor, escolha outro número.");
+//        }
 
         despesa.atualizarStatus();
 

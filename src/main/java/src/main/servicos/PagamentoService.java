@@ -19,9 +19,9 @@ public class PagamentoService {
     }
 
     public void atualizarPagamento(Pagamento pagamento) {
-        if (!pagamentoDAO.verificarPagamentoUnico(pagamento.getNumeroPagamento(), pagamento.getAnoPagamento(), pagamento.getId())) {
-            throw new RuntimeException("O pagamento com o mesmo número e ano já foi registrado.");
-        }
+//        if (!pagamentoDAO.verificarPagamentoUnico(pagamento.getNumeroPagamento(), pagamento.getAnoPagamento(), pagamento.getId())) {
+//            throw new RuntimeException("O pagamento com o mesmo número e ano já foi registrado.");
+//        }
 
         pagamentoDAO.atualizarPagamento(pagamento);
     }
@@ -29,6 +29,10 @@ public class PagamentoService {
     public void deletarPagamento(long idPagamento) {
         Pagamento pagamento = pagamentoDAO.buscarPagamentoPorId(idPagamento);
 
-        pagamentoDAO.deletarPagamento(idPagamento);
+        if (pagamento != null) {
+            pagamentoDAO.deletarPagamento(idPagamento);
+        } else {
+            throw new RuntimeException("Pagamento não encontrado com o ID fornecido.");
+        }
     }
 }

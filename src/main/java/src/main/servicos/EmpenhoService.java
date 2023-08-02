@@ -21,9 +21,9 @@ public class EmpenhoService {
     }
 
     public void atualizarEmpenho(Empenho empenho) {
-        if (!empenhoDAO.verificarEmpenhoUnico(empenho.getNumeroEmpenho(), empenho.getAnoEmpenho(), empenho.getId())) {
-            throw new RuntimeException("O empenho com o mesmo número e ano já foi registrado.");
-        }
+//        if (!empenhoDAO.verificarEmpenhoUnico(empenho.getNumeroEmpenho(), empenho.getAnoEmpenho(), empenho.getId())) {
+//            throw new RuntimeException("O empenho com o mesmo número e ano já foi registrado.");
+//        }
 
         empenhoDAO.atualizarEmpenho(empenho);
     }
