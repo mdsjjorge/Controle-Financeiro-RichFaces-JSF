@@ -1,0 +1,14 @@
+src\main\servicos\PagamentoService.class
+src\main\entidades\StatusDespesa.class
+src\main\servicos\DespesaService.class
+src\main\util\PostgreSQLConnectionUtil.class
+src\main\DAO\PagamentoDAO.class
+src\main\web\DespesaMB.class
+src\main\web\EmpenhoMB.class
+src\main\servicos\EmpenhoService.class
+src\main\entidades\Despesa.class
+src\main\entidades\Pagamento.class
+src\main\DAO\EmpenhoDAO.class
+src\main\DAO\DespesaDAO.class
+src\main\entidades\Empenho.class
+src\main\web\PagamentoMB.class

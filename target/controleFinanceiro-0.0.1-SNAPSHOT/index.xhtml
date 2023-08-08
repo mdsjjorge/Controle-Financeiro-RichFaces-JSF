@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:rich="http://richfaces.org/rich">
+
+<h:head>
+    <title>Sistema de Controle Financeiro</title>
+</h:head>
+<h:body>
+    <h1>Sistema de Controle Financeiro</h1>
+    
+    <h3>Menu de Navegação</h3>
+    <ul>
+        <li><a href="listDespesas.xhtml">Listar Despesas</a></li>
+        <li><a href="listEmpenhos.xhtml">Listar Empenhos</a></li>
+        <li><a href="listPagamentos.xhtml">Listar Pagamentos</a></li>
+    </ul>
+    
+    <h3>Cadastrar Nova Despesa</h3>
+    <rich:panel>
+        <h3>Cadastrar Nova Despesa</h3>
+		<rich:panel>
+		    <h:form id="cadastroDespesaForm">
+		        <h:outputLabel value="Número de Protocolo:" for="numeroProtocolo" />
+		        <h:inputText id="numeroProtocolo" value="#{despesaMB.novaDespesa.numeroProtocolo}" required="true" />
+		        <br />
+		        
+		        <!-- faltando outros campos -->
+		        
+		        <h:commandButton value="Cadastrar Despesa" action="#{despesaMB.cadastrarDespesa}" />
+		    </h:form>
+		</rich:panel>
+    </rich:panel>
+    
+    <h3>Cadastrar Novo Empenho</h3>
+    <rich:panel>
+        <h3>Cadastrar Novo Empenho</h3>
+		<rich:panel>
+		    <h:form id="cadastroEmpenhoForm">
+		        <h:outputLabel value="Ano do Empenho:" for="anoEmpenho" />
+		        <h:inputText id="anoEmpenho" value="#{empenhoMB.novoEmpenho.anoEmpenho}" required="true" />
+		        <br />
+		        
+		        <!-- faltando completar-->
+		        
+		        <h:commandButton value="Cadastrar Empenho" action="#{empenhoMB.cadastrarEmpenho}" />
+		    </h:form>
+		</rich:panel>
+    </rich:panel>
+    
+    <h3>Cadastrar Novo Pagamento</h3>
+    <rich:panel>
+        <h3>Cadastrar Novo Pagamento</h3>
+		<rich:panel>
+		    <h:form id="cadastroPagamentoForm">
+		        <h:outputLabel value="Ano do Pagamento:" for="anoPagamento" />
+		        <h:inputText id="anoPagamento" value="#{pagamentoMB.novoPagamento.anoPagamento}" required="true" />
+		        <br />
+		        
+		        <!-- faltando completar-->
+		        
+		        <h:commandButton value="Cadastrar Pagamento" action="#{pagamentoMB.cadastrarPagamento}" />
+		    </h:form>
+		</rich:panel>
+    </rich:panel>
+    
+    <h3>Consultar Relação de Despesa</h3>
+    <rich:panel>
+        <h3>Consultar Relação de Despesa</h3>
+		<rich:panel>
+		    <h:form id="consultaDespesaForm">
+		        <h:outputLabel value="Data Protocolo Inicial:" for="dataProtocoloInicio" />
+		        <rich:calendar id="dataProtocoloInicio" value="#{despesaMB.dataProtocoloInicio}" datePattern="dd/MM/yyyy" />
+		        <br />
+		        
+		        <!-- faltando completar-->
+		        
+		        <h:commandButton value="Consultar Despesas" action="#{despesaMB.consultarDespesas}" />
+		    </h:form>
+		</rich:panel>
+    </rich:panel>
+    
+    <h3>Consultar Relação de Empenho</h3>
+    <rich:panel>
+        <h3>Consultar Relação de Empenho</h3>
+		<rich:panel>
+		    <h:form id="consultaEmpenhoForm">
+		        <h:outputLabel value="Data de Empenho Inicial:" for="dataEmpenhoInicio" />
+		        <rich:calendar id="dataEmpenhoInicio" value="#{empenhoMB.dataEmpenhoInicio}" datePattern="dd/MM/yyyy" />
+		        <br />
+		        
+		        <h:outputLabel value="Data de Empenho Final:" for="dataEmpenhoFim" />
+		        <rich:calendar id="dataEmpenhoFim" value="#{empenhoMB.dataEmpenhoFim}" datePattern="dd/MM/yyyy" />
+		        <br />
+		        
+		        <h:commandButton value="Consultar Empenhos" action="#{empenhoMB.consultarEmpenhos}" />
+		    </h:form>
+		</rich:panel>
+    </rich:panel>
+    
+    <h3>Consultar Relação de Pagamento</h3>
+    <rich:panel>
+        <h3>Consultar Relação de Pagamento</h3>
+		<rich:panel>
+		    <h:form id="consultaPagamentoForm">
+		        <h:outputLabel value="Data de Pagamento Inicial:" for="dataPagamentoInicio" />
+		        <rich:calendar id="dataPagamentoInicio" value="#{pagamentoMB.dataPagamentoInicio}" datePattern="dd/MM/yyyy" />
+		        <br />
+		        
+		        <h:outputLabel value="Data de Pagamento Final:" for="dataPagamentoFim" />
+		        <rich:calendar id="dataPagamentoFim" value="#{pagamentoMB.dataPagamentoFim}" datePattern="dd/MM/yyyy" />
+		        <br />
+		        
+		        <h:commandButton value="Consultar Pagamentos" action="#{pagamentoMB.consultarPagamentos}" />
+		    </h:form>
+		</rich:panel>
+    </rich:panel>
+</h:body>
+</html>
